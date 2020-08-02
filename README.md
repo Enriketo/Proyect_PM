@@ -18,7 +18,6 @@ Main objective:
 
 Specific objectives:
 * Subsystem for appointments with specialist doctors    
-* Subsystem for movie and theater tickets
 * User environment
 
 # Expected results
