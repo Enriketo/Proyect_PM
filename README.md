@@ -13,13 +13,13 @@ Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered H
 Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor
 
 # Main and specific objectives
-Dillinger uses a number of open source projects to work properly:
-* [AngularJS] - HTML enhanced for web apps!
+Main objective:
+* Build a functional Beta Web App!
 
-Dillinger uses a number of open source projects to work properly:
-* [Ace Editor] - awesome web-based text editor
-* [markdown-it] - Markdown parser done right. Fast and easy to extend.
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps
+Specific objectives:
+* Subsystem for appointments with specialist doctors    
+* Subsystem for movie and theater tickets
+* User environment
 
 # Expected results
 Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor
