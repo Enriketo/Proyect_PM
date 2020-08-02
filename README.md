@@ -1,5 +1,5 @@
 # Team name
-Telstar DEV :tw-1f386:
+Telstar DEV
 
 # Proyect
 "Booking" (for vote)
