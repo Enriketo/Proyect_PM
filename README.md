@@ -1,8 +1,8 @@
 # Team name :metal: :fire:
-Undefined (for vote)
+:brain: Smart Code :computer:
 
 # Proyect
-"Booking" (for vote)
+:hospital: Mederi
 
 # Justification 
 :clipboard: :point_down:
