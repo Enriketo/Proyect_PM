@@ -26,8 +26,15 @@ Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered H
 Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor
 
 # Scope and limitations
-Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor
-Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor
+### Scope  
+* Booking of general and specialized medical services.
+* A user can select his appointment date and hour if they are available.
+### Limitations  
+* Not responsible for:
+    * Punctuality of users or service providers.
+* Without control over:
+    * Quality of the registered services.
+    * Schedule availability of the registred services.
 
 ### Collaborators
 
