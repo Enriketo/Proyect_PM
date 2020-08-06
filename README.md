@@ -20,7 +20,7 @@ The process of execution of the project is summarized in a couple of steps.
 After all the process detailed previously, we need to get an assessment from our coach and iterate to get a good beta app or improve it a little more. 
 
 
-# Problem Statement - Alejandro Palacios Arévalo :smile:
+# Problem Statement 
 
 Due to current conditions not only in Colombia but worldwide, the health sector in general has taken a course which will expose it to difficult decision conditions where, on the one hand, it must deal with the problem of overcrowding and care timely not only for patients with COVID-19, but also in the other specialties that people require such as, to name a few, dentistry, surgical operations, treatments and the entire catalog of diseases, chronic conditions, ailments and even accidents that are present in all levels and socio-economic strata of a population, city or country, and on the other hand, reliability of public and health care programmed according to the needs of patients such as the execution and care of traditional medical appointments.
 
