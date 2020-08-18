@@ -5,19 +5,19 @@ const doctorIdSchema = joi.string();
 const specialtyIdSchema = joi.string();
 
 
-const createDoctorsSpecialtiesSchema = {
+const createDoctorSpecialtySchema = {
     id: idSchema.required(),
     doctorId: doctorIdSchema.required(),
     specialtyId: specialtyIdSchema.required()
 };
 
-const updateDoctorsSpecialtiesSchema = {
+const updateDoctorSpecialtySchema = {
     doctorId: doctorIdSchema,
     specialtyId: specialtyIdSchema
 };
 
 module.exports = {
     idSchema,
-    createDoctorsSpecialtiesSchema,
-    updateDoctorsSpecialtiesSchema
+    createDoctorSpecialtySchema,
+    updateDoctorSpecialtySchema
 }

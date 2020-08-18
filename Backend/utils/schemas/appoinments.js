@@ -5,14 +5,14 @@ const patientIdSchema = joi.string();
 const reasonIdSchema = joi.string();
 const isOnlineSchema = joi.boolean();
 
-const createAppoinmentsSchema = {
+const createAppoinmentSchema = {
     id: idSchema.required(),
     patientId: patientIdSchema.required(),
     reasonId: reasonIdSchema.required(),
     isOnline: isOnlineSchema.required()
 };
 
-const updateAppoinmentsSchema = {
+const updateAppoinmentSchema = {
     patientId: patientIdSchema,
     reasonId: reasonIdSchema,
     isOnline: isOnlineSchema
@@ -20,6 +20,6 @@ const updateAppoinmentsSchema = {
 
 module.exports = {
     idSchema,
-    createAppoinmentsSchema,
-    updateAppoinmentsSchema
+    createAppoinmentSchema,
+    updateAppoinmentSchema
 }

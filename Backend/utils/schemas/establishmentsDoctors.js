@@ -4,19 +4,19 @@ const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
 const establishmentsIdSchema = joi.string();
 const doctorIdSchema = joi.string();
 
-const createEstablishmentsDoctorsSchema = {
+const createEstablishmentDoctorSchema = {
     id: idSchema.required(),
     establishmentId: establishmentsIdSchema.required(),
     doctorId: doctorIdSchema.required()
 };
 
-const updateEstablishmentsDoctorsSchema = {
+const updateEstablishmentDoctorSchema = {
     establishmentId: establishmentsIdSchema,
     doctorId: doctorIdSchema
 };
 
 module.exports = {
     idSchema,
-    createEstablishmentsDoctorsSchema,
-    updateEstablishmentsDoctorsSchema
+    createEstablishmentDoctorSchema,
+    updateEstablishmentDoctorSchema
 }

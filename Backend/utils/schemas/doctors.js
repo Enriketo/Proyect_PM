@@ -6,7 +6,7 @@ const pictureUrlSchema = joi.string();
 const bioSchema = joi.string();
 const ratingSchema = joi.decimal();
 
-const createDoctorsSchema = {
+const createDoctorSchema = {
     id: idSchema.required(),
     userId: userIdSchema.required(),
     pictureUrl: pictureUrlSchema.required(),
@@ -14,7 +14,7 @@ const createDoctorsSchema = {
     rating: ratingSchema.required()
 };
 
-const updateDoctorsSchema = {
+const updateDoctorSchema = {
     userId: userIdSchema,
     pictureUrl: pictureUrlSchema,
     bio: bioSchema,
@@ -23,6 +23,6 @@ const updateDoctorsSchema = {
 
 module.exports = {
     idSchema,
-    createDoctorsSchema,
-    updateDoctorsSchema
+    createDoctorSchema,
+    updateDoctorSchema
 }

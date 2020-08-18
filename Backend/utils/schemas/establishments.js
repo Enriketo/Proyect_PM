@@ -4,19 +4,19 @@ const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
 const nameSchema = joi.string();
 const addressSchema = joi.string();
 
-const createEstablihmentsSchema = {
+const createEstablishmentSchema = {
     id: idSchema.required(),
     name: nameSchema.required(),
     address: addressSchema.required()
 };
 
-const updateEstablishmentsSchema = {
+const updateEstablishmentSchema = {
     name: nameSchema,
     address: addressSchema
 };
 
 module.exports = {
     idSchema,
-    createEstablihmentsSchema,
-    updateEstablishmentsSchema
+    createEstablishmentSchema,
+    updateEstablishmentSchema
 }
