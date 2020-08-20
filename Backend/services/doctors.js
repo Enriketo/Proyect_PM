@@ -1,10 +1,10 @@
 //const MongoLib = require ('../lib/mongo');
-var MysqlLib = require('mysql');
+var MysqlLib = require('../lib/mysql');
 
 class DoctorsService{
     constructor () {
         this.collection = 'Doctors';
-        this.mongoDB = new MysqlLib();
+        this.mysqlDB = new MysqlLib();
     }
     async getDoctors({ tags }){
         const query = tags &&  { tags: { $in: tags }};

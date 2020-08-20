@@ -2,7 +2,7 @@ const express = require('express');
 const UsersService = require('../services/users');
 
 const {
-    userIdSchema,
+    IdSchema,
     createUserSchema,
     updateUserSchema
 } = require('../utils/schemas/users');
@@ -29,7 +29,7 @@ function usersApi(app) {
         };
     });
 
-    router.get("/:userId", validationHandler({ userId: userIdSchema }, 'params'), async function (req, res, next) {
+    router.get("/:userId", validationHandler({ userId: IdSchema }, 'params'), async function (req, res, next) {
         const { userId } = req.params;
         try {
             const users = await usersService.getUser({ userId });
@@ -56,7 +56,7 @@ function usersApi(app) {
         };
     });
 
-    router.put("/:userId", validationHandler({ userId: userIdSchema }, 'params'), validationHandler(updateUserSchema), async function (req, res, next) {
+    router.put("/:userId", validationHandler({ userId: idSchema }, 'params'), validationHandler(updateUserSchema), async function (req, res, next) {
         const { userId } = req.params;
         const { body: user } = req;
         try {

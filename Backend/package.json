@@ -4,7 +4,7 @@
   "description": "Backend for booking app, into platzi master program",
   "main": "index.js",
   "scripts": {
-    "test": "test:dev"
+    "start": "start:dev"
   },
   "repository": {
     "type": "git",

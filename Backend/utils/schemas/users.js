@@ -22,11 +22,9 @@ const createUserSchema = {
 };
 
 const updateUserSchema = {
-    id: idSchema,
     name: nameSchema,
     lastName: lastNameSchema,
     phone: phoneSchema,
-    email: emailSchema,
     password: passwordSchema,
     birthDate: birthDateSchema,
     gender: genderSchema

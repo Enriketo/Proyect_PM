@@ -5,7 +5,7 @@ var MysqlLib = require('mysql');
 class UsersService{
     constructor () {
         this.collection = 'users';
-        this.mongoDB = new MysqlLib();
+        this.mysqlDB = new MysqlLib();
     }
     async getUsers({ tags }){
         const query = tags &&  { tags: { $in: tags }};
