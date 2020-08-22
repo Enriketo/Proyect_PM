@@ -1,16 +1,12 @@
-const express = require('express');
-const DoctorsService = require('../services/doctors');
+import { Router } from 'express';
+import DoctorsService from '../services/doctors';
 
-const {
-    IdSchema,
-    createDoctorSchema,
-    updateDoctorSchema
-} = require('../utils/schemas/doctors');
+import { idSchema, createDoctorSchema, updateDoctorSchema } from '../utils/schemas/doctors';
 
-const validationHandler = require('../utils/middleware/validationHandler');
+import validationHandler from '../utils/middleware/validationHandler';
 
 function doctorsApi(app) {
-    const router = express.Router();
+    const router = Router();
     app.use("/api/doctors", router);
 
     const doctorsService = new DoctorsService();
@@ -29,12 +25,12 @@ function doctorsApi(app) {
         };
     });
 
-    router.get("/:doctorId", validationHandler({ doctorId: IdSchema }, 'params'), async function (req, res, next) {
-        const { doctorId } = req.params;
+    router.get("/:id", validationHandler({ id: idSchema }, 'params'), async function (req, res, next) {
+        const { id } = req.params;
         try {
-            const doctors = await doctorsService.getDoctor({ doctorId });
+            const doctors= await doctorsService.getDoctor({ id });
             res.status(200).json({
-                data: doctors,
+                data: doctor,
                 message: 'doctor retrieved'
             });
         } catch (err) {
@@ -56,8 +52,8 @@ function doctorsApi(app) {
         };
     });
 
-    router.put("/:doctorId", validationHandler({ doctorId: IdSchema }, 'params'), validationHandler(updateDoctorSchema), async function (req, res, next) {
-        const { doctorId } = req.params;
+    router.put("/:id", validationHandler({ id: idSchema }, 'params'), validationHandler(updateDoctorSchema), async function (req, res, next) {
+        const { id } = req.params;
         const { body: doctor } = req;
         try {
             const updatedDoctorId = await doctorsService.updateDoctor({ doctorId, doctor });
@@ -70,10 +66,10 @@ function doctorsApi(app) {
         };
     });
 
-    router.delete("/:doctorId", validationHandler({ doctorId: IdSchema }, 'params'), async function (req, res, next) {
-        const { doctorId } = req.params;
+    router.delete("/:id", validationHandler({ id: idSchema }, 'params'), async function (req, res, next) {
+        const { id } = req.params;
         try {
-            const deletedDoctorId = await doctorsService.deleteDoctor({ doctorId });
+            const deletedDoctorId = await doctorsService.deleteDoctor({ id });
             res.status(200).json({
                 data: deletedDoctorId,
                 message: 'doctor deleted'
@@ -84,4 +80,4 @@ function doctorsApi(app) {
     });
 }
 
-module.exports = doctorsApi;
+export default doctorsApi;

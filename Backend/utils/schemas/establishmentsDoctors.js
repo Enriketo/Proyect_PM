@@ -1,8 +1,8 @@
-const joi = require('@hapi/joi');
+import { string } from '@hapi/joi';
 
-const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
-const establishmentsIdSchema = joi.string();
-const doctorIdSchema = joi.string();
+const idSchema = string().regex(/^[0/9a-fA-F]{24}$/);
+const establishmentsIdSchema = string();
+const doctorIdSchema = string();
 
 const createEstablishmentDoctorSchema = {
     id: idSchema.required(),
@@ -15,7 +15,7 @@ const updateEstablishmentDoctorSchema = {
     doctorId: doctorIdSchema
 };
 
-module.exports = {
+export default {
     idSchema,
     createEstablishmentDoctorSchema,
     updateEstablishmentDoctorSchema
