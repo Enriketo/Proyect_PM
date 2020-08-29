@@ -1,7 +1,7 @@
-const joi = require('@hapi/joi');
+import { string } from '@hapi/joi';
 
-const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
-const userIdSchema = joi.string();
+const idSchema = string().regex(/^[0/9a-fA-F]{24}$/);
+const userIdSchema = string();
 
 const createPatientSchema = {
     id: idSchema.required(),
@@ -12,7 +12,7 @@ const updatePatientSchema = {
     userId: userIdSchema
 };
 
-module.exports = {
+export default {
     idSchema,
     createPatientSchema,
     updatePatientSchema

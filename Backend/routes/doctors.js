@@ -43,7 +43,7 @@ function doctorsApi(app) {
         try {
             ;
             const createdDoctorId = await doctorsService.createDoctor({ doctor });
-            res.status(201).json({
+            res.status(200).json({
                 data: createdDoctorId,
                 message: 'doctor created'
             });
