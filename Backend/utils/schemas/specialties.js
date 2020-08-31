@@ -1,18 +1,21 @@
-const joi = require('@hapi/joi');
+import {  number, string } from '@hapi/joi';
 
-const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
-const nameSchema = joi.string();
+const idSchema = string().regex(/^[0/9a-fA-F]{24}$/);
+const nameSchema = string().max(50);
+const activeSchema = number().max(1);
 
 const createSpecialtySchema = {
     id: idSchema.required(),
-    name: nameSchema.required()
+    name: nameSchema.required(),
+    active: activeSchema.required()
 };
 
 const updateSpecialtySchema = {
-    name: nameSchema
+    name: nameSchema,
+    acti: activeSchema
 };
 
-module.exports = {
+export default {
     idSchema,
     createSpecialtySchema,
     updateSpecialtySchema

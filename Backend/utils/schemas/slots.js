@@ -1,11 +1,11 @@
-const joi = require('@hapi/joi');
+import { string, number } from '@hapi/joi';
 
-const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
-const scheduleIdSchema = joi.string();
-const appointmentIdSchema = joi.string();
-const startSchema = joi.number().min(1).max(12);
-const endSchema = joi.string().email().max(256);
-const availableSchema = joi.string();
+const idSchema = string().regex(/^[0/9a-fA-F]{24}$/);
+const scheduleIdSchema = string();
+const appointmentIdSchema = string();
+const startSchema = number().min(1).max(12);
+const endSchema = string().email().max(256);
+const availableSchema = string();
 
 const createSlotSchema = {
     id: idSchema.required(),
@@ -24,7 +24,7 @@ const updateSlotSchema = {
     available: availableSchema
 };
 
-module.exports = {
+export default {
     idSchema,
     createSlotSchema,
     updateSlotSchema

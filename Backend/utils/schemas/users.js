@@ -1,13 +1,13 @@
-const joi = require('@hapi/joi');
+import { string, number, date } from '@hapi/joi';
 
-const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
-const nameSchema = joi.string().max(20);
-const lastNameSchema = joi.string().max(20);
-const phoneSchema = joi.number().min(1).max(12);
-const emailSchema = joi.string().email().max(256);
-const passwordSchema = joi.string();
-const birthDateSchema = joi.date();
-const genderSchema = joi.string().max(99);
+const idSchema = string().regex(/^[0/9a-fA-F]{24}$/);
+const nameSchema = string().max(20);
+const lastNameSchema = string().max(20);
+const phoneSchema = number().min(1).max(12);
+const emailSchema = string().email().max(256);
+const passwordSchema = string();
+const birthDateSchema = date();
+const genderSchema = string().max(99);
 
 
 const createUserSchema = {
@@ -30,7 +30,7 @@ const updateUserSchema = {
     gender: genderSchema
 };
 
-module.exports = {
+export default {
     idSchema,
     createUserSchema,
     updateUserSchema
