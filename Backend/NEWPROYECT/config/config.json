@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "admin",
+    "password": "OCYJBEyitrUboTMBvojO",
+    "database": "mederi",
+    "host": "mederi-dev.csvyhe8o5c5o.us-east-2.rds.amazonaws.com",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "admin",
+    "password": "OCYJBEyitrUboTMBvojO",
+    "database": "mederi",
+    "host": "mederi-dev.csvyhe8o5c5o.us-east-2.rds.amazonaws.com",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "admin",
+    "password": "OCYJBEyitrUboTMBvojO",
+    "database": "mederi",
+    "host": "mederi-dev.csvyhe8o5c5o.us-east-2.rds.amazonaws.com",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+}
