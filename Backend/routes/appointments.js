@@ -1,9 +1,7 @@
-import { Router } from 'express';
-import AppointmentsService from '../services/appointments';
-
-import { idSchema, createAppoinmentSchema, updateAppoinmentSchema } from '../utils/schemas/appoinments';
-
-import validationHandler from '../utils/middleware/validationHandler';
+const { Router } = require('express');
+const AppointmentsService = require('../services/appointments');
+const { idSchema, createAppoinmentSchema, updateAppoinmentSchema } = require('../utils/schemas/appoinments');
+const validationHandler = require('../utils/middleware/validationHandler');
 
 function appointmentsApi(app) {
     const router = Router();
@@ -80,4 +78,4 @@ function appointmentsApi(app) {
     });
 }
 
-export default appointmentsApi;
+module.exports = appointmentsApi;

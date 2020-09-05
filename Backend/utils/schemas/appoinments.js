@@ -1,9 +1,9 @@
-import { string, boolean } from '@hapi/joi';
+const joi = require('@hapi/joi');
 
-const idSchema = string().regex(/^[0/9a-fA-F]{24}$/);
-const patientIdSchema = string();
-const reasonIdSchema = string();
-const isOnlineSchema = boolean();
+const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
+const patientIdSchema = joi.string();
+const reasonIdSchema = joi.string();
+const isOnlineSchema = joi.boolean();
 
 const createAppoinmentSchema = {
     id: idSchema.required(),
@@ -18,7 +18,7 @@ const updateAppoinmentSchema = {
     isOnline: isOnlineSchema
 };
 
-export default {
+module.exports = {
     idSchema,
     createAppoinmentSchema,
     updateAppoinmentSchema

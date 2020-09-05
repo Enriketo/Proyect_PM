@@ -81,4 +81,4 @@ function SlotsApi(app) {
     });
 }
 
-export default SlotsApi;
+module.exports = SlotsApi;

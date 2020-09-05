@@ -1,10 +1,10 @@
-import { string, decimal } from '@hapi/joi';
+const joi = require('@hapi/joi');
 
-const idSchema = string().regex(/^[0/9a-fA-F]{24}$/);
-const userIdSchema = string();
-const pictureUrlSchema = string();
-const bioSchema = string();
-const ratingSchema = decimal();
+const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
+const userIdSchema = joi.string();
+const pictureUrlSchema = joi.string();
+const bioSchema = joi.string();
+const ratingSchema = joi.decimal();
 
 const createDoctorSchema = {
     id: idSchema.required(),
@@ -21,7 +21,7 @@ const updateDoctorSchema = {
     rating: ratingSchema
 };
 
-export default {
+module.exports = {
     idSchema,
     createDoctorSchema,
     updateDoctorSchema

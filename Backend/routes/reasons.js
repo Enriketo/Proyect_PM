@@ -81,4 +81,4 @@ function ReasonsApi(app) {
     });
 }
 
-export default ReasonsApi;
+module.exports = ReasonsApi;

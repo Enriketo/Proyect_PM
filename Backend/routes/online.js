@@ -80,4 +80,4 @@ function onlineAppointmentsApi(app) {
     });
 }
 
-export default onlineAppointmentsApi;
+module.exports = onlineAppointmentsApi;

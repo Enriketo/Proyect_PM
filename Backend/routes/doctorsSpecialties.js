@@ -1,9 +1,7 @@
-import { Router } from 'express';
-import DoctorsSpecialtiesService from '../services/doctorsSpecialties';
-
-import { idSchema, createAppoinmentSchema, updateAppoinmentSchema } from '../utils/schemas/appoinments';
-
-import validationHandler from '../utils/middleware/validationHandler';
+const { Router } = require ('express');
+const DoctorsSpecialtiesService = require ('../services/doctorsSpecialties');
+const { idSchema, createDoctorSpecialtySchema, updateDoctorSpecialtySchema } = require ('../utils/schemas/doctorsSpecialties');
+const validationHandler = require ('../utils/middleware/validationHandler');
 
 function doctorsSpecialtiesApi(app) {
     const router = Router();
@@ -80,4 +78,4 @@ function doctorsSpecialtiesApi(app) {
     });
 }
 
-export default doctorsSpecialtiesApi;
+module.exports = doctorsSpecialtiesApi;

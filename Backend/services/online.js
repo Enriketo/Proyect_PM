@@ -1,6 +1,6 @@
 const MongoLib = require('../lib/mongo');
 
-class onlineAppointmentsService{
+class OnlineAppointmentsService{
     constructor () {
         this.collection = 'OnlineAppointments';
         this.mongoDB = new MongoLib();
@@ -29,4 +29,4 @@ class onlineAppointmentsService{
 }
 
 
-export default onlineAppointmentsService;
+module.exports = OnlineAppointmentsService;

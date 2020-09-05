@@ -80,4 +80,4 @@ function PatientsApi(app) {
     });
 }
 
-export default PatientsApi;
+module.exports = PatientsApi;

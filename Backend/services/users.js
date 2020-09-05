@@ -1,6 +1,6 @@
 const MongoLib = require('../lib/mongo');
 
-class usersService{
+class UsersService{
     constructor () {
         this.collection = 'users';
         this.mongoDB = new MongoLib();
@@ -28,4 +28,4 @@ class usersService{
     }
 }
 
-module.exports = usersService;
+module.exports = UsersService;

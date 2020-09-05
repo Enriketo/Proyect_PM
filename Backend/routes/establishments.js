@@ -81,4 +81,4 @@ function establishmentsApi(app) {
     });
 }
 
-export default establishmentsApi;
+module.exports = establishmentsApi;

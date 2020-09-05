@@ -80,4 +80,4 @@ function PresentialAppointmentsApi(app) {
     });
 }
 
-export default PresentialAppointmentsApi;
+module.exports = PresentialAppointmentsApi;

@@ -1,7 +1,7 @@
 //const MongoLib = require ('../lib/mongo');
 const MongoLib = require('../lib/mongo');
 
-class doctorsService{
+class DoctorsService{
     constructor () {
         this.collection = 'Doctors';
         this.mongoDB = new MongoLib();
@@ -29,4 +29,4 @@ class doctorsService{
     }
 }
 
-export default doctorsService;
+module.exports = DoctorsService;

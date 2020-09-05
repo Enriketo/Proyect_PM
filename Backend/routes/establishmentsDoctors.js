@@ -80,4 +80,4 @@ function establishmentsDoctorsApi(app) {
     });
 }
 
-export default establishmentsDoctorsApi;
+module.exports = establishmentsDoctorsApi;

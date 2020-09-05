@@ -81,4 +81,4 @@ function SpecialtiesApi(app) {
     });
 }
 
-export default SpecialtiesApi;
+module.exports = SpecialtiesApi;

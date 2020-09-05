@@ -13,17 +13,17 @@ const usersApi = require('../routes/users');
 
 
 const routes = function (server) {
-    server.use('doctors', doctorsApi);
-    server.use('doctorsSpecialties', doctorsSpecialtiesApi);
-    server.use('establishments', establishmentsApi);
-    server.use('establishmentsDoctors', establishmentsDoctorsApi);
-    server.use('online', onlineApi);
-    server.use('patients', patientsApi);
-    server.use('presential', presentialApi);
-    server.use('reasons', reasonsApi);
-    server.use('slots', slotsApi);
-    server.use('specialties', specialtiesApi);
-    server.use('users', usersApi);
+    server.use('/api/doctors', doctorsApi);
+    server.use('/api/doctorsSpecialties', doctorsSpecialtiesApi);
+    server.use('/api/establishments', establishmentsApi);
+    server.use('/api/establishmentsDoctors', establishmentsDoctorsApi);
+    server.use('/api/online', onlineApi);
+    server.use('/api/patients', patientsApi);
+    server.use('/api/presential', presentialApi);
+    server.use('/api/reasons', reasonsApi);
+    server.use('/api/slots', slotsApi);
+    server.use('/api/specialties', specialtiesApi);
+    server.use('/api/users', usersApi);
 }
 
 module.exports = routes;
