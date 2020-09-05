@@ -1,32 +1,32 @@
-import MysqlLib from '../lib/mysql';
+const MongoLib = require('../lib/mongo');
 
-class PatientsService{
+class patientsService{
     constructor () {
         this.collection = 'Patients';
-        this.mysqlDB = new MysqlLib();
+        this.mongoDB = new MongoLib();
     }
     async getPatients({ tags }){
         const query = tags &&  { tags: { $in: tags }};
-        const patients = await this.mysqlDB.getAll(this.collection, query);
+        const patients = await this.mongoDB.getAll(this.collection, query);
         return patients || [];
     }
     async getPatient({ id }){
-        const patient = await this.mysqlDB.get(this.collection, id);
+        const patient = await this.mongoDB.get(this.collection, id);
         return patient || {};
     }
     async createPatient({ patient }){
-        const createdPatientId = await this.mysqlDB.create(this.collection, patient);
+        const createdPatientId = await this.mongoDB.create(this.collection, patient);
         return createdPatientId;
     }
     async updatePatient({ id, patient } = {}){
-        const updatedPatientId = await this.mysqlDB.update(this.collection, id, patient);
+        const updatedPatientId = await this.mongoDB.update(this.collection, id, patient);
         return updatedPatientId;
     }
     async deletePatient({ id }){
-        const deletedPatientId = await this.mysqlDB.delete(this.collection, id);
+        const deletedPatientId = await this.mongoDB.delete(this.collection, id);
         return deletedPatientId;
     }
 }
 
 
-export default PatientsService;
+export default patientsService;

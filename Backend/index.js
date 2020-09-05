@@ -1,44 +1,38 @@
 const express = require('express');
 const app = express();
-
-const config = require('./config/index').default;
-const usersApi = require('./routes/users.js');
-
+// Api routes
+const router = require('./network/routes');
+// System config
+const { config } = require('./config/index');
+// Midelwares
 const {
   logErrors,
   wrapErrors,
   errorHandler
 } = require('./utils/middleware/errorHandlers.js');
 
-const notFoundHandler = require('./utils/middleware/notFoundhandler')
+const notFoundHandler = require('./utils/middleware/notFoundHandler');
+
+const bodyParser = require('body-parser');
 
 // body parser
 app.use(express.json());
+  // -- parse application/json
+app.use(bodyParser.json());
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
 
-//routes
-usersApi(app);
+// routes
+router(app);
 
-//Cath 404
+// Catch 404
 app.use(notFoundHandler);
 
-//Errors middleware
+// Errors middleware
 app.use(logErrors);
 app.use(wrapErrors);
 app.use(errorHandler);
 
 app.listen(config.port, function() {
-  console.log(`Listening http://18.219.3.155:${config.port}`);
+  console.log(`Listening http://localhost:${config.port}`);
 });
-//  
-
-//const express = require('express');
-//const app = express();
-//
-//const { config } = require('./config/index');
-//const moviesApi = require('./routes/movies.js');
-//
-//moviesApi(app);
-//
-//app.listen(config.port, function() {
-//  console.log(`Listening http://localhost:${config.port}`);
-//});

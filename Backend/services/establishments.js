@@ -1,32 +1,32 @@
-import MysqlLib from '../lib/mysql';
+const MongoLib = require('../lib/mongo');
 
-class EstablishmentsService{
+class establishmentsService{
     constructor () {
         this.collection = 'Establishments';
-        this.mysqlDB = new MysqlLib();
+        this.mongoDB = new MongoLib();
     }
     async getEstablishments({ tags }){
         const query = tags &&  { tags: { $in: tags }};
-        const establishments = await this.mysqlDB.getAll(this.collection, query);
+        const establishments = await this.mongoDB.getAll(this.collection, query);
         return establishments || [];
     }
     async getEstablishment({ id }){
-        const establishment = await this.mysqlDB.get(this.collection, id);
+        const establishment = await this.mongoDB.get(this.collection, id);
         return establishment || {};
     }
     async createEstablishment({ establishment }){
-        const createdEstablishmentId = await this.mysqlDB.create(this.collection, establishment);
+        const createdEstablishmentId = await this.mongoDB.create(this.collection, establishment);
         return createdEstablishmentId;
     }
     async updateEstablishment({ id, establishment } = {}){
-        const updatedEstablishmentId = await this.mysqlDB.update(this.collection, id, establishment);
+        const updatedEstablishmentId = await this.mongoDB.update(this.collection, id, establishment);
         return updatedEstablishmentId;
     }
     async deleteEstablishment({ id }){
-        const deletedEstablishmentId = await this.mysqlDB.delete(this.collection, id);
+        const deletedEstablishmentId = await this.mongoDB.delete(this.collection, id);
         return deletedEstablishmentId;
     }
 }
 
 
-export default EstablishmentsService;
+export default establishmentsService;

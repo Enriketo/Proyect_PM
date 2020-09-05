@@ -1,32 +1,32 @@
-import MysqlLib from '../lib/mysql';
+const MongoLib = require('../lib/mongo');
 
-class SpecialtiesService{
+class specialtiesService{
     constructor () {
         this.collection = 'Specialties';
-        this.mysqlDB = new MysqlLib();
+        this.mongoDB = new MongoLib();
     }
     async getSpecialties({ tags }){
         const query = tags &&  { tags: { $in: tags }};
-        const specialties = await this.mysqlDB.getAll(this.collection, query);
+        const specialties = await this.mongoDB.getAll(this.collection, query);
         return specialties || [];
     }
     async getSpecialty({ id }){
-        const specialty = await this.mysqlDB.get(this.collection, id);
+        const specialty = await this.mongoDB.get(this.collection, id);
         return specialty || {};
     }
     async createSpecialty({ specialty }){
-        const specialtyId = await this.mysqlDB.create(this.collection, specialty);
+        const specialtyId = await this.mongoDB.create(this.collection, specialty);
         return specialtyId;
     }
     async updateSpecialty({ id, specialty } = {}){
-        const updatedSpecialtyId = await this.mysqlDB.update(this.collection, id, specialty);
+        const updatedSpecialtyId = await this.mongoDB.update(this.collection, id, specialty);
         return updatedSpecialtyId;
     }
     async deleteSpecialty({ id }){
-        const deletedSpecialtyId = await this.mysqlDB.delete(this.collection, id);
+        const deletedSpecialtyId = await this.mongoDB.delete(this.collection, id);
         return deletedSpecialtyId;
     }
 }
 
 
-export default SpecialtiesService;
+export default specialtiesService;

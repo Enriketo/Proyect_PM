@@ -1,4 +1,4 @@
-import { string, number, date } from '@hapi/joi';
+const { string, number, date, required } = require('@hapi/joi');
 
 const idSchema = string().regex(/^[0/9a-fA-F]{24}$/);
 const nameSchema = string().max(20);
@@ -30,8 +30,8 @@ const updateUserSchema = {
     gender: genderSchema
 };
 
-export default {
+module.exports = { 
     idSchema,
     createUserSchema,
     updateUserSchema
-}
+ };

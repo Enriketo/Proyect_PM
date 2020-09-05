@@ -1,32 +1,32 @@
 //const MongoLib = require ('../lib/mongo');
-import MysqlLib from '../lib/mysql';
+const MongoLib = require('../lib/mongo');
 
-class DoctorsService{
+class doctorsService{
     constructor () {
         this.collection = 'Doctors';
-        this.mysqlDB = new MysqlLib();
+        this.mongoDB = new MongoLib();
     }
     async getDoctors({ tags }){
         const query = tags &&  { tags: { $in: tags }};
-        const Doctors = await this.mysqlDB.getAll(this.collection, query);
+        const Doctors = await this.mongoDB.getAll(this.collection, query);
         return Doctors || [];
     }
     async getDoctor({ id }){
-        const doctor = await this.mysqlDB.get(this.collection, id);
+        const doctor = await this.mongoDB.get(this.collection, id);
         return doctor || {};
     }
     async createDoctor({ doctor }){
-        const createdDoctorId = await this.mysqlDB.create(this.collection, doctor);
+        const createdDoctorId = await this.mongoDB.create(this.collection, doctor);
         return createdDoctorId;
     }
     async updateDoctor({ id, doctor } = {}){
-        const updatedDoctorsId = await this.mysqlDB.update(this.collection, id, doctor);
+        const updatedDoctorsId = await this.mongoDB.update(this.collection, id, doctor);
         return updatedDoctorsId;
     }
     async deleteDoctor({ id }){
-        const deletedDoctorId = await this.mysqlDB.delete(this.collection, id);
+        const deletedDoctorId = await this.mongoDB.delete(this.collection, id);
         return deletedDoctorId;
     }
 }
 
-export default DoctorsService;
+export default doctorsService;
