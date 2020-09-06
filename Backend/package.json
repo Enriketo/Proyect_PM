@@ -4,7 +4,8 @@
   "description": "Backend for booking app, into platzi master program",
   "main": "index.js",
   "scripts": {
-    "start": "start:dev"
+    "dev": "DEBUG=app:* nodemon index",
+    "start": "SET NODE_ENV=production & nodemon index"
   },
   "repository": {
     "type": "git",
