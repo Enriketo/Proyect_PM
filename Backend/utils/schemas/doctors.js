@@ -4,7 +4,7 @@ const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
 const userIdSchema = joi.string();
 const pictureUrlSchema = joi.string();
 const bioSchema = joi.string();
-const ratingSchema = joi.decimal();
+const ratingSchema = joi.number();
 
 const createDoctorSchema = {
     id: idSchema.required(),

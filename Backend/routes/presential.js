@@ -1,9 +1,7 @@
-import { Router } from 'express';
-import PresentialAppointmentService from '../services/presential';
-
-import { idSchema, createPresentialSchema, updatePresentialSchema } from '../utils/schemas/online';
-
-import validationHandler from '../utils/middleware/validationHandler';
+const { Router } = require('express');
+const PresentialAppointmentService = require('../services/presential');
+const { idSchema, createPresentialSchema, updatePresentialSchema } = require('../utils/schemas/online');
+const validationHandler = require('../utils/middleware/validationHandler');
 
 function PresentialAppointmentsApi(app) {
     const router = Router();

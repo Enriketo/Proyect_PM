@@ -1,9 +1,7 @@
-import { Router } from 'express';
-import PatientsService from '../services/patients';
-
-import { idSchema, createPatientSchema, updatePatientSchema } from '../utils/schemas/online';
-
-import validationHandler from '../utils/middleware/validationHandler';
+const { Router } = require('express');
+const PatientsService = require('../services/patients');
+const { idSchema, createPatientSchema, updatePatientSchema } = require('../utils/schemas/online');
+const validationHandler = require('../utils/middleware/validationHandler');
 
 function PatientsApi(app) {
     const router = Router();

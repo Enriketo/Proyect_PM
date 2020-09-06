@@ -1,9 +1,7 @@
-import { Router } from 'express';
-import EstablishmentsDoctorsService from '../services/establishmentsDoctors';
-
-import { idSchema, createEstablishmentDoctorSchema, updateEstablishmentDoctorSchema } from '../utils/schemas/establishmentsDoctors';
-
-import validationHandler from '../utils/middleware/validationHandler';
+const { Router } = require('express');
+const EstablishmentsDoctorsService = require('../services/establishmentsDoctors');
+const { idSchema, createEstablishmentDoctorSchema, updateEstablishmentDoctorSchema } = require('../utils/schemas/establishmentsDoctors');
+const validationHandler = require('../utils/middleware/validationHandler');
 
 function establishmentsDoctorsApi(app) {
     const router = Router();

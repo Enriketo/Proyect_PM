@@ -1,9 +1,7 @@
-import { Router } from 'express';
-import OnlineAppointmentsService from '../services/online';
-
-import { idSchema, createOnlineSchema, updateOnlineSchema } from '../utils/schemas/online';
-
-import validationHandler from '../utils/middleware/validationHandler';
+const { Router } = require('express');
+const OnlineAppointmentsService = require('../services/online');
+const { idSchema, createOnlineSchema, updateOnlineSchema } = require('../utils/schemas/online');
+const validationHandler = require('../utils/middleware/validationHandler');
 
 function onlineAppointmentsApi(app) {
     const router = Router();

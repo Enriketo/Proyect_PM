@@ -1,10 +1,7 @@
-import { Router } from 'express';
-import EstablishmentsService from '../services/establishments';
-
-import { idSchema, createEstablishmentSchema, updateEstablishmentSchema } from '../utils/schemas/establishments';
-
-import validationHandler from '../utils/middleware/validationHandler';
-
+const { Router }  = require('express');
+const EstablishmentsService  = require('../services/establishments');
+const { idSchema, createEstablishmentSchema, updateEstablishmentSchema }  = require('../utils/schemas/establishments');
+const validationHandler  = require('../utils/middleware/validationHandler');
 
 function establishmentsApi(app) {
     const router = Router();

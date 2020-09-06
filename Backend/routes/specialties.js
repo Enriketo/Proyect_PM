@@ -1,9 +1,7 @@
-import { Router } from 'express';
-import SpecialtiesService from '../services/specialties';
-
-import { idSchema, createSpecialtySchema, updateSpecialtySchema } from '../utils/schemas/reasons';
-
-import validationHandler from '../utils/middleware/validationHandler';
+const { Router } = require('express');
+const SpecialtiesService = require('../services/specialties');
+const { idSchema, createSpecialtySchema, updateSpecialtySchema } = require('../utils/schemas/reasons');
+const validationHandler = require('../utils/middleware/validationHandler');
 
 function SpecialtiesApi(app) {
     const router = Router();

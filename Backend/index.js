@@ -32,7 +32,7 @@ app.use(notFoundHandler);
 app.use(logErrors);
 app.use(wrapErrors);
 app.use(errorHandler);
-app.use(config.publicRoute, express.static('public'));
+//app.use(config.publicRoute, express.static('public'));
 app.listen(config.port, function() {
   console.log(`Listening http://${config.ip}:${config.port}`);
 });

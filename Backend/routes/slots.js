@@ -1,9 +1,7 @@
-import { Router } from 'express';
-import SlotsService from '../services/slots';
-
-import { idSchema, createSlotSchema, updateSlotSchema } from '../utils/schemas/reasons';
-
-import validationHandler from '../utils/middleware/validationHandler';
+const { Router } = require('express');
+const SlotsService = require('../services/slots');
+const { idSchema, createSlotSchema, updateSlotSchema } = require('../utils/schemas/reasons');
+const validationHandler = require('../utils/middleware/validationHandler');
 
 function SlotsApi(app) {
     const router = Router();

@@ -6,7 +6,6 @@ const reasonIdSchema = joi.string();
 const isOnlineSchema = joi.boolean();
 
 const createAppoinmentSchema = {
-    id: idSchema.required(),
     patientId: patientIdSchema.required(),
     reasonId: reasonIdSchema.required(),
     isOnline: isOnlineSchema.required()

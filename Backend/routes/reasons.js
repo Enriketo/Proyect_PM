@@ -1,9 +1,7 @@
-import { Router } from 'express';
-import ReasonsService from '../services/reasons';
-
-import { idSchema, createReasonSchema, updateReasonSchema } from '../utils/schemas/reasons';
-
-import validationHandler from '../utils/middleware/validationHandler';
+const { Router } = require('express');
+const ReasonsService = require('../services/reasons');
+const { idSchema, createReasonSchema, updateReasonSchema } = require('../utils/schemas/reasons');
+const validationHandler = require('../utils/middleware/validationHandler');
 
 function ReasonsApi(app) {
     const router = Router();
