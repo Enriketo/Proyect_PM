@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 // Api routes
-const router = require('./network/routes');
+const routes = require('./network/routes');
 // System config
 const { config } = require('./config/index');
 // Midelwares
@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // routes
-router(app);
+routes(app);
 
 // Catch 404
 app.use(notFoundHandler);
