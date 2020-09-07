@@ -1,4 +1,3 @@
-const express = require('express');
 const doctorsApi = require('../routes/doctors');
 const doctorsSpecialtiesApi = require('../routes/doctorsSpecialties');
 const establishmentsApi = require('../routes/establishments');
