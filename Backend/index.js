@@ -9,9 +9,9 @@ const {
   logErrors,
   wrapErrors,
   errorHandler
-} = require('./utils/middleware/errorHandlers.js');
+} = require('../../utils/middleware/errorHandlers.js');
 
-const notFoundHandler = require('./utils/middleware/notFoundHandler');
+const notFoundHandler = require('../../utils/middleware/notFoundHandler');
 
 const bodyParser = require('body-parser');
 
