@@ -1,6 +1,6 @@
 const joi = require('@hapi/joi');
 
-const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
+const idSchema = joi.string();
 const nameSchema = joi.string().max(50);
 const addressSchema = joi.string().max(100);
 const phoneSchema = joi.number().min(1).max(15);
@@ -26,3 +26,9 @@ module.exports = {
     createEstablishmentSchema,
     updateEstablishmentSchema
 }
+
+// "id": "",
+// "name": "",
+// "address": "",
+// "phone": "",
+// "active": ""

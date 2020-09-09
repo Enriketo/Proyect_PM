@@ -1,18 +1,18 @@
 const joi = require('@hapi/joi');
 
-const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
-const establishmentsIdSchema = joi.string();
-const doctorIdSchema = joi.string();
+const idSchema = joi.string();
+const establishment_idSchema = joi.string();
+const doctor_idSchema = joi.string();
 
 const createEstablishmentDoctorSchema = {
     id: idSchema.required(),
-    establishmentId: establishmentsIdSchema.required(),
-    doctorId: doctorIdSchema.required()
+    establishment_id: establishment_idSchema.required(),
+    doctor_id: doctor_idSchema.required()
 };
 
 const updateEstablishmentDoctorSchema = {
-    establishmentId: establishmentsIdSchema,
-    doctorId: doctorIdSchema
+    establishment_id: establishment_idSchema,
+    doctor_id: doctor_idSchema,
 };
 
 module.exports = {
@@ -20,3 +20,7 @@ module.exports = {
     createEstablishmentDoctorSchema,
     updateEstablishmentDoctorSchema
 }
+
+// "id":"",
+// "establishment_id":"",
+// "doctor_id":""

@@ -1,27 +1,33 @@
 const joi = require('@hapi/joi');
 
-const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
-const scheduleIdSchema = joi.string();
-const appointmentIdSchema = joi.string();
-const startSchema = joi.number().min(1).max(12);
-const endSchema = joi.string().email().max(256);
+
+const idSchema = joi.string();
+const doctor_idSchema = joi.string();
+const establishment_idSchema = joi.string();
+const datetimeSchema = joi.date();
+const durationSchema = joi.string();
 const availableSchema = joi.string();
+const activeSchema = joi.string();
+
+
 
 const createSlotSchema = {
     id: idSchema.required(),
-    scheduleId: scheduleIdSchema.required(),
-    appointmentId: appointmentIdSchema.required(),
-    start: startSchema.required(),
-    end: endSchema.required(),
-    available: availableSchema.required()
+    doctor_id: doctor_idSchema.required(),
+    establishment_id: establishment_idSchema.required(),
+    datetime: datetimeSchema.required(),
+    duration: durationSchema.required(),
+    available: availableSchema.required(),
+    active: activeSchema.required(),
 };
 
 const updateSlotSchema = {
-    scheduleId: scheduleIdSchema,
-    appointmentId: appointmentIdSchema,
-    start: startSchema,
-    end: endSchema,
-    available: availableSchema
+    doctor_id: doctor_idSchema,
+    establishment_id: establishment_idSchema,
+    datetime: datetimeSchema,
+    duration: durationSchema,
+    available: availableSchema,
+    active: activeSchema,
 };
 
 module.exports = {
@@ -29,3 +35,11 @@ module.exports = {
     createSlotSchema,
     updateSlotSchema
 }
+
+// "id": "",
+// "doctor_id": "",
+// "establishment_id": "",
+// "datetime": "",
+// "duration": "",
+// "available": "",
+// "active": "",

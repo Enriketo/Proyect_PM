@@ -1,15 +1,18 @@
 const joi = require('@hapi/joi');
 
-const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
-const userIdSchema = joi.string();
+const idSchema = joi.string();
+const user_idSchema = joi.string();
+const passwordSchema = joi.string();
 
 const createPatientSchema = {
     id: idSchema.required(),
-    userId: userIdSchema.required()
+    user_id: user_idSchema.required(),
+    password: passwordSchema.required(),
 };
 
 const updatePatientSchema = {
-    userId: userIdSchema
+    user_id: user_idSchema,
+    password: passwordSchema,
 };
 
 module.exports = {
@@ -17,3 +20,8 @@ module.exports = {
     createPatientSchema,
     updatePatientSchema
 }
+
+
+// "id":"",
+// "user_id":"",
+// "password":""

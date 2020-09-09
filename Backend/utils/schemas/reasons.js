@@ -1,18 +1,21 @@
 const joi = require('@hapi/joi');
 
-const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
-const specialtyIdSchema = joi.string();
-const nameSchema = joi.string();
+const idSchema = joi.string();
+const nameSchema =  joi.string();
+const could_be_onlineSchema =  joi.string();
+const activeSchema =  joi.string()
 
 const createReasonSchema = {
     id: idSchema.required(),
-    specialtyId: specialtyIdSchema.required(),
-    name: nameSchema.required()
+    name: nameSchema.required(),
+    could_be_online: could_be_onlineSchema.required(),
+    active: activeSchema.required(),
 };
 
 const updateReasonSchema = {
-    specialtyId: specialtyIdSchema,
-    name: nameSchema
+    name: nameSchema,
+    could_be_online: could_be_onlineSchema,
+    active: activeSchema,
 };
 
 module.exports = {
@@ -20,3 +23,7 @@ module.exports = {
     createReasonSchema,
     updateReasonSchema
 }
+// "id":"",
+// "name":"",
+// "could_be_online":"",
+// "active":""

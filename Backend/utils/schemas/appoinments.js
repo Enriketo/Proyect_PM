@@ -1,20 +1,27 @@
 const joi = require('@hapi/joi');
 
-const idSchema = joi.string().regex(/^[0/9a-fA-F]{24}$/);
-const patientIdSchema = joi.string();
-const reasonIdSchema = joi.string();
-const isOnlineSchema = joi.boolean();
+const idSchema = joi.string();
+const patient_idSchema = joi.string();
+const reason_idSchema = joi.string();
+const slot_idSchema = joi.string();
+const review_idSchema = joi.string();
+const activeSchema = joi.string();
 
 const createAppoinmentSchema = {
-    patientId: patientIdSchema.required(),
-    reasonId: reasonIdSchema.required(),
-    isOnline: isOnlineSchema.required()
+    id: idSchema.required(),
+    patient_id: patient_idSchema.required(),
+    reason_id: reason_idSchema.required(),
+    slot_id: slot_idSchema.required(),
+    review_id: review_idSchema.required(),
+    active: activeSchema.required(),
 };
 
 const updateAppoinmentSchema = {
-    patientId: patientIdSchema,
-    reasonId: reasonIdSchema,
-    isOnline: isOnlineSchema
+    patient_id: patient_idSchema.required(),
+    reason_id: reason_idSchema.required(),
+    slot_id: slot_idSchema.required(),
+    review_id: review_idSchema.required(),
+    active: activeSchema.required(),
 };
 
 module.exports = {
@@ -22,3 +29,11 @@ module.exports = {
     createAppoinmentSchema,
     updateAppoinmentSchema
 }
+
+
+// "id":"",
+// "patient_id":"",
+// "reason_id":"",
+// "slot_id":"",
+// "review_id":"",
+// "active":""
